@@ -1,6 +1,6 @@
 public class Metodos {
 
-    public static Boolean verificarAnagrama(String primeiraPalavra,String segundaPalavra){
+    public static Boolean verificarAnaclico(String primeiraPalavra, String segundaPalavra){
         String palavraInvertida = "";
         for (int i = segundaPalavra.length()-1;i >= 0;i--){
 
@@ -14,6 +14,24 @@ public class Metodos {
             return false;
         }
 
+
+    }
+
+    public static Boolean verificarAnagrama(String primeiraPalavra,String segundaPalavra){
+        Boolean resultado = true;
+
+        for (int i = 0;i <= segundaPalavra.length()-1;i++){
+
+            char letra = segundaPalavra.charAt(i);
+            String letraConvertida = String.valueOf(letra);
+
+            if (!primeiraPalavra.contains(letraConvertida) && primeiraPalavra.length() != segundaPalavra.length()){
+                resultado = false;
+                break;
+            }
+
+        }
+        return resultado;
     }
 
 }
