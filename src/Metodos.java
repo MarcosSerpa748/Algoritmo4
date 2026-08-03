@@ -8,6 +8,7 @@ public class Metodos {
             String letraConvertida = String.valueOf(letra);
             palavraInvertida = palavraInvertida.concat(letraConvertida);
         }
+
         if (palavraInvertida.equalsIgnoreCase(primeiraPalavra)){
             return true;
         }else{
@@ -27,7 +28,6 @@ public class Metodos {
 
                 char letra = segundaPalavra.charAt(i);
                 String letraConvertida = String.valueOf(letra);
-                System.out.println("Não deu certo");
 
                 if (!(primeiraPalavra.contains(letraConvertida))){
                     resultado = false;
