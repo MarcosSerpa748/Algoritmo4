@@ -17,20 +17,27 @@ public class Metodos {
 
     }
 
-    public static Boolean verificarAnagrama(String primeiraPalavra,String segundaPalavra){
-        Boolean resultado = true;
+    public static boolean verificarAnagrama(String primeiraPalavra,String segundaPalavra){
+        boolean resultado = true;
 
-        for (int i = 0;i <= segundaPalavra.length()-1;i++){
+        if (primeiraPalavra.length() != segundaPalavra.length()){
+            resultado = false;
+        }else{
+            for (int i = 0;i <= segundaPalavra.length()-1;i++){
 
-            char letra = segundaPalavra.charAt(i);
-            String letraConvertida = String.valueOf(letra);
+                char letra = segundaPalavra.charAt(i);
+                String letraConvertida = String.valueOf(letra);
+                System.out.println("Não deu certo");
 
-            if (!primeiraPalavra.contains(letraConvertida) && primeiraPalavra.length() != segundaPalavra.length()){
-                resultado = false;
-                break;
+                if (!(primeiraPalavra.contains(letraConvertida))){
+                    resultado = false;
+                    System.out.println("Não existe essa letra na segunda palavra");
+                    break;
+                }
+
             }
-
         }
+
         return resultado;
     }
 
